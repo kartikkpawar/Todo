@@ -16,13 +16,15 @@ const updateStorage = (state) => {
     })
   );
 };
+
 export const todoSlice = createSlice({
   name: "todo",
   initialState,
   reducers: {
     addTodo: (state, action) => {
-      state.todos.push(action.payload);
+      state.todos.unshift(action.payload);
       state.remaningTodo += 1;
+
       updateStorage(state);
     },
     removeTodo: (state, action) => {

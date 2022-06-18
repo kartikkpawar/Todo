@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(loadAllTodos());
-  }, []);
+  }, [dispatch]);
   const todos = useSelector((state) => state.todo.todos);
   const completeCount = useSelector((state) => state.todo.completeCount);
   const remaningTodo = useSelector((state) => state.todo.remaningTodo);
@@ -19,6 +19,7 @@ const App = () => {
 
   const handleAddTodo = (e) => {
     if (e.key !== "Enter") return;
+    if (todoInput === "") return alert("Enter todo");
 
     const todo = {
       id: nanoid(),
