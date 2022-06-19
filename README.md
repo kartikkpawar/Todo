@@ -21,7 +21,7 @@ Simple todo app build with React.Js and Tailwind
 https://github.com/kartikkpawar/Todo
 ```
 
-- nstall the dependencies
+- Install the dependencies
 
 ```
 npm install
